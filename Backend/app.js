@@ -23,7 +23,7 @@ io.on('connection', onConnected)
   console.log(socket.id);
   socketsConnected.add(socket.id, socketsConnected.size);
  
-io.emit('clients-total')
+io.emit('clients-total',socketsConnected.size)
 
   socket.on('disconnect', () => {
     console.log('socket disconnected', socket.id);
